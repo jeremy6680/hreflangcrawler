@@ -1,6 +1,6 @@
-# SEO Crawler
+# Hreflang Crawler
 
-SEO Crawler is a simple Python script that crawls a website, extracts all `<link rel="alternate" hreflang="...">` tags from up to 100 pages, and exports the results to a CSV file. This is useful for auditing hreflang implementations across a website for SEO purposes.
+Hreflang Crawler is a simple Python script that crawls a website, extracts all `<link rel="alternate" hreflang="...">` tags from up to 100 pages, and exports the results to a CSV file. This is useful for auditing hreflang implementations across a website for SEO purposes.
 
 ## Features
 
@@ -21,25 +21,39 @@ Install dependencies with:
 pip install -r requirements.txt
 ```
 
-Or, if using pyproject.toml:
+Or, if using `pyproject.toml`:
 
-Usage
+```sh
+pip install .
+```
+
+## Usage
+
 Run the script from the command line, providing the base URL to crawl. For example:
 
-    python main.py https://example.com
+```sh
+python main.py https://example.com
+```
 
-The script will crawl up to 100 internal pages starting from the base URL.
-It will extract all hreflang tags from each page.
-Results are saved to hreflang_data.csv in the current directory.
-Output
+- The script will crawl up to 100 internal pages starting from the base URL.
+- It will extract all hreflang tags from each page.
+- Results are saved to `hreflang_data.csv` in the current directory.
+
+## Output
+
 The output CSV will have one row per crawled page, with columns for the page URL and each found hreflang value:
 
-page_url	en	fr	de	...
-https://.../page1	...	...	...	...
-https://.../page2	...	...	...	...
-Notes
-Only internal links (same domain or relative URLs) are followed.
-The crawl is limited to 100 pages to avoid excessive requests.
-Make sure you have permission to crawl the target website.
-License
+| page_url           | en  | fr  | de  | ... |
+|--------------------|-----|-----|-----|-----|
+| https://.../page1  | ... | ... | ... | ... |
+| https://.../page2  | ... | ... | ... | ... |
+
+## Notes
+
+- Only internal links (same domain or relative URLs) are followed.
+- The crawl is limited to 100 pages to avoid excessive requests.
+- Make sure you have permission to crawl the target website.
+
+## License
+
 MIT License
