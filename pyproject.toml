@@ -1,7 +1,7 @@
 [project]
-name = "seocrawler"
+name = "hreflangcrawler"
 version = "0.1.0"
-description = "Add your description here"
+description = "Simple Python script that crawls a website and extracts hreflang tags"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
